@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { ArrowDown, ArrowUpRight, Download, Github, Menu, MousePointer2, Sparkles, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Download, Github, Linkedin, Menu, MousePointer2, Sparkles, X } from 'lucide-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -63,7 +63,9 @@ const projects = [
 ];
 
 const tech = ['Java', 'Python', 'JavaScript', 'React', 'SQL', 'Cloud Computing', 'Problem Solving', 'Data Structures'];
-const githubUrl = 'https://github.com/janmaijayjaiswal01';
+const githubUrl = 'https://github.com/janmaijayjagsan01';
+const linkedinUrl = 'https://www.linkedin.com/in/janmaijay-jaiswal-635040283';
+const emailAddress = 'janmaijayjagsan01@gmail.com';
 
 function useReveal() {
   const [ready, setReady] = useState(false);
@@ -98,8 +100,11 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (value
         </Anchor>
         <nav className="hidden items-center gap-9 text-[11px] font-semibold uppercase tracking-[.18em] text-[#bcb9ca] md:flex">
           {links.map(([id, label]) => <Anchor key={id} href={`#${id}`}>{label}</Anchor>)}
-          <a data-testid="link-github" href="https://github.com/janmaijayjaiswal01" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#f6c85f]">
+          <a data-testid="link-github" href={githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#f6c85f]">
             GitHub <ArrowUpRight size={13} strokeWidth={1.6} />
+          </a>
+          <a data-testid="link-linkedin" href={linkedinUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#f6c85f]">
+            LinkedIn <ArrowUpRight size={13} strokeWidth={1.6} />
           </a>
         </nav>
         <button data-testid="button-open-menu" aria-label="Open navigation menu" onClick={() => setMenuOpen(!menuOpen)} className="grid h-10 w-10 place-items-center border border-[#4e4d6a] text-[#efe8d7] md:hidden">
@@ -110,7 +115,8 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (value
         <div className="mx-4 border border-[#555472] bg-[#252545] p-5 md:hidden">
           <div className="flex flex-col gap-5 text-xs font-semibold uppercase tracking-[.2em] text-[#efe8d7]">
             {links.map(([id, label]) => <Anchor key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</Anchor>)}
-            <a data-testid="link-github-mobile" href="https://github.com/janmaijayjaiswal01" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#f6c85f]">GitHub <ArrowUpRight size={14} /></a>
+            <a data-testid="link-github-mobile" href={githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#f6c85f]">GitHub <ArrowUpRight size={14} /></a>
+            <a data-testid="link-linkedin-mobile" href={linkedinUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-[#f6c85f]">LinkedIn <ArrowUpRight size={14} /></a>
           </div>
         </div>
       )}
@@ -304,8 +310,12 @@ function ContactSection() {
         <div className="mt-12 flex flex-col justify-between gap-10 border-t border-[#555472] pt-7 md:flex-row md:items-end">
           <p className="reveal max-w-[420px] text-lg leading-8 text-[#c8c6d2]">I am looking for the next problem worth getting curious about. If it is practical, a little tangled, and made for people — let us talk.</p>
           <div className="reveal reveal-delay-2 flex flex-col items-start gap-4">
-            <a data-testid="link-email-contact" href="mailto:janmaijayjaiswal01@gmail.com" className="group flex items-center gap-4 border-b border-[#f6c85f] pb-3 font-display text-xl tracking-[-.04em] text-[#f6c85f] md:text-2xl">janmaijayjaiswal01@gmail.com <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
-            <div className="flex flex-wrap gap-5 font-mono text-[10px] uppercase tracking-[.16em] text-[#bcb9ca]"><a data-testid="link-github-contact" href="https://github.com/janmaijayjaiswal01" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[#f6c85f]"><Github size={14} /> GitHub</a><a data-testid="link-resume" href="/JJ_RESUME_1787425298534.pdf" download className="flex items-center gap-2 hover:text-[#f6c85f]"><Download size={14} /> Download resume</a></div>
+            <a data-testid="link-email-contact" href={`mailto:${emailAddress}`} className="group flex items-center gap-4 border-b border-[#f6c85f] pb-3 font-display text-xl tracking-[-.04em] text-[#f6c85f] md:text-2xl">{emailAddress} <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
+            <div className="flex flex-wrap gap-5 font-mono text-[10px] uppercase tracking-[.16em] text-[#bcb9ca]">
+              <a data-testid="link-github-contact" href={githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[#f6c85f]"><Github size={14} /> GitHub</a>
+              <a data-testid="link-linkedin-contact" href={linkedinUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-[#f6c85f]"><Linkedin size={14} /> LinkedIn</a>
+              <a data-testid="link-resume" href="/JJ_RESUME_1787425298534.pdf" download className="flex items-center gap-2 hover:text-[#f6c85f]"><Download size={14} /> Download resume</a>
+            </div>
           </div>
         </div>
         <div className="mt-28 flex flex-col justify-between gap-4 border-t border-[#555472] pt-5 font-mono text-[10px] uppercase tracking-[.17em] text-[#777592] md:flex-row"><span>Janmaijay Jaiswal / 2026</span><span>Made with patience + sharp edges</span><Anchor href="#top">Back to top ↑</Anchor></div>
