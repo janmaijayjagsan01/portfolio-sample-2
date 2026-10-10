@@ -163,6 +163,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .reveal-delay-3 { transition-delay: .24s; }
 .marquee-track { animation: marquee 30s linear infinite; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.skills-track { animation: skillsMarquee 35s linear infinite; }
+.skills-track:hover { animation-play-state: paused; }
+@keyframes skillsMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .float-slow { animation: floatSlow 7s ease-in-out infinite; }
 @keyframes floatSlow { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-9px) rotate(-2deg); } }
 .scribble { font-family: 'Space Grotesk', sans-serif; letter-spacing: -.04em; }
