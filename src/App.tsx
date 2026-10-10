@@ -62,7 +62,22 @@ const projects = [
   },
 ];
 
-const tech = ['Java', 'Python', 'JavaScript', 'React', 'SQL', 'Cloud Computing', 'Problem Solving', 'Data Structures'];
+const tech = [
+  'Java',
+  'Python',
+  'PySpark',
+  'Apache Kafka',
+  'Apache Airflow',
+  'SQL',
+  'Snowflake',
+  'AWS',
+  'JavaScript',
+  'React',
+  'Cloud Computing',
+  'ETL Pipelines',
+  'Problem Solving',
+  'Data Structures',
+];
 const githubUrl = 'https://github.com/janmaijayjagsan01';
 const linkedinUrl = 'https://www.linkedin.com/in/janmaijay-jaiswal-635040283';
 const emailAddress = 'janmaijayjagsan01@gmail.com';
@@ -262,7 +277,8 @@ function StorySection() {
             <h2 className="reveal reveal-delay-1 mt-5 max-w-[680px] font-display text-[clamp(2.8rem,6vw,6rem)] font-medium leading-[.9] tracking-[-.1em] text-[#252545]">Learning in<br /><span className="text-[#146b72]">layers,</span> not leaps.</h2>
             <div className="reveal reveal-delay-2 mt-12 border-l border-[#8d8490] pl-6 md:pl-9">
               <div className="relative pb-12"><span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full border-2 border-[#d6cdbb] bg-[#d96f5b] md:-left-[39px]" /><p className="font-mono text-[10px] uppercase tracking-[.16em] text-[#68637a]">2023 — 2027 / Kanpur</p><h3 className="mt-3 font-display text-2xl font-semibold tracking-[-.05em] text-[#252545]">B.Tech, AI &amp; Data Science</h3><p className="mt-2 text-sm leading-6 text-[#68637a]">PSIT Kanpur · Building the fundamentals that let an idea survive contact with reality.</p></div>
-              <div className="relative"><span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full border-2 border-[#d6cdbb] bg-[#f6c85f] md:-left-[39px]" /><p className="font-mono text-[10px] uppercase tracking-[.16em] text-[#68637a]">2026 / Cloud chapter</p><h3 className="mt-3 font-display text-2xl font-semibold tracking-[-.05em] text-[#252545]">IBM PBEL Cloud Computing internship</h3><p className="mt-2 text-sm leading-6 text-[#68637a]">A next chapter in understanding how useful software gets from a laptop into the hands of many.</p></div>
+              <div className="relative pb-12"><span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full border-2 border-[#d6cdbb] bg-[#f6c85f] md:-left-[39px]" /><p className="font-mono text-[10px] uppercase tracking-[.16em] text-[#68637a]">2026 / Cloud chapter</p><h3 className="mt-3 font-display text-2xl font-semibold tracking-[-.05em] text-[#252545]">IBM PBEL Cloud Computing internship</h3><p className="mt-2 text-sm leading-6 text-[#68637a]">A next chapter in understanding how useful software gets from a laptop into the hands of many.</p></div>
+              <div className="relative"><span className="absolute -left-[31px] top-1 h-3 w-3 rounded-full border-2 border-[#d6cdbb] bg-[#146b72] md:-left-[39px]" /><p className="font-mono text-[10px] uppercase tracking-[.16em] text-[#68637a]">2026 / Data Engineering chapter</p><h3 className="mt-3 font-display text-2xl font-semibold tracking-[-.05em] text-[#252545]">Distributed Pipelines &amp; ETL Systems</h3><p className="mt-2 text-sm leading-6 text-[#68637a]">Building resilient pipelines, streaming data, and automated workflows using PySpark, Kafka, Airflow, and Cloud Warehouses.</p></div>
             </div>
           </div>
           <div className="relative">
@@ -273,7 +289,7 @@ function StorySection() {
                 <div className="font-mono text-[10px] uppercase leading-5 tracking-[.12em] text-[#68637a]">Question worth keeping:<br />What would make this feel obvious?</div>
               </div>
             </div>
-            <div className="reveal reveal-delay-2 absolute -bottom-8 -right-2 rotate-[8deg] bg-[#146b72] px-4 py-3 font-mono text-[10px] uppercase tracking-[.14em] text-[#efe8d7] shadow-[5px_5px_0_rgba(37,37,69,.12)] md:right-0">Currently: learning cloud</div>
+            <div className="reveal reveal-delay-2 absolute -bottom-8 -right-2 rotate-[8deg] bg-[#146b72] px-4 py-3 font-mono text-[10px] uppercase tracking-[.14em] text-[#efe8d7] shadow-[5px_5px_0_rgba(37,37,69,.12)] md:right-0">Currently: Data Engineering &amp; Distributed Systems</div>
           </div>
         </div>
       </div>
