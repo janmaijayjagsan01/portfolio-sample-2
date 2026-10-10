@@ -79,7 +79,6 @@ const projects = [
 ];
 
 const tech = [
-  'Java',
   'Python',
   'PySpark',
   'Apache Kafka',
