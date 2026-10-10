@@ -11,12 +11,10 @@ import {
   Mail,
   MapPin,
   Menu,
-  Moon,
   MousePointer2,
   Phone,
   Send,
   Sparkles,
-  Sun,
   User,
   X,
 } from 'lucide-react';
@@ -417,13 +415,6 @@ function SqlIcon({ className = 'w-10 h-10' }: { className?: string }) {
   );
 }
 
-function SpotifyIcon({ className = 'w-5 h-5' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="#1DB954" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-    </svg>
-  );
-}
 
 const technicalSkills = [
   { name: 'C++', icon: CppIcon },
@@ -639,7 +630,6 @@ function ContactSection() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [isLightMode, setIsLightMode] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -651,11 +641,6 @@ function ContactSection() {
       setMessage('');
       setSubmitted(false);
     }, 4500);
-  };
-
-  const toggleTheme = () => {
-    setIsLightMode((prev) => !prev);
-    document.documentElement.classList.toggle('dark');
   };
 
   return (
@@ -757,14 +742,12 @@ function ContactSection() {
                 <Code size={17} />
               </a>
               <a
-                data-testid="link-instagram-contact"
-                href="https://instagram.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#252545] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all"
+                data-testid="link-resume"
+                href="/JJ_RESUME_1787425298534.pdf"
+                download
+                className="flex h-11 items-center gap-2 px-4 border border-[#555472] bg-[#252545] font-mono text-xs uppercase tracking-wider text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all"
               >
-                <Instagram size={17} />
+                <Download size={15} /> Resume
               </a>
             </div>
           </div>
@@ -837,62 +820,6 @@ function ContactSection() {
                 </button>
               </form>
             )}
-          </div>
-        </div>
-
-        {/* Floating Dock Toolbar */}
-        <div className="reveal reveal-delay-3 mt-16 flex justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 border border-[#555472] bg-[#252545]/95 backdrop-blur-md p-2 sm:p-2.5 shadow-[6px_6px_0_rgba(0,0,0,.25)]">
-            {/* Resume CV */}
-            <a
-              data-testid="link-resume"
-              href="/JJ_RESUME_1787425298534.pdf"
-              download
-              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#2d2d52] transition-colors"
-            >
-              <div className="flex h-7 w-7 items-center justify-center border border-[#d96f5b] bg-[#d96f5b]/20 text-[#d96f5b]">
-                <Download size={14} />
-              </div>
-              <div className="flex flex-col text-left leading-tight">
-                <span className="font-mono text-xs font-bold text-[#d96f5b]">Resume</span>
-                <span className="font-mono text-[9px] uppercase tracking-wider text-[#777592]">Download CV</span>
-              </div>
-            </a>
-
-            <div className="h-6 w-px bg-[#555472]" />
-
-            {/* Theme Toggle */}
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#2d2d52] transition-colors cursor-pointer"
-            >
-              <div className="flex h-7 w-7 items-center justify-center border border-[#f6c85f] bg-[#f6c85f]/20 text-[#f6c85f]">
-                {isLightMode ? <Moon size={14} /> : <Sun size={14} />}
-              </div>
-              <div className="flex flex-col text-left leading-tight">
-                <span className="font-mono text-xs font-bold text-[#efe8d7]">{isLightMode ? 'Dark Mode' : 'Light Mode'}</span>
-                <span className="font-mono text-[9px] uppercase tracking-wider text-[#777592]">Switch theme</span>
-              </div>
-            </button>
-
-            <div className="h-6 w-px bg-[#555472]" />
-
-            {/* Spotify */}
-            <a
-              href="https://open.spotify.com"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#2d2d52] transition-colors"
-            >
-              <div className="flex h-7 w-7 items-center justify-center border border-[#1DB954] bg-[#1DB954]/20">
-                <SpotifyIcon className="w-4 h-4" />
-              </div>
-              <div className="flex flex-col text-left leading-tight">
-                <span className="font-mono text-xs font-bold text-[#1DB954]">Spotify</span>
-                <span className="font-mono text-[9px] uppercase tracking-wider text-[#777592]">Blend with me</span>
-              </div>
-            </a>
           </div>
         </div>
 
