@@ -445,22 +445,24 @@ const technicalSkills = [
 
 function SkillsSection() {
   return (
-    <section id="skills" aria-label="Technical Skills" className="relative overflow-hidden bg-[#0c0c16] px-5 py-20 md:px-8 md:py-28 text-white border-y border-[#1f1e32]">
-      {/* Top right decorative orange accent bar matching Image 2 */}
-      <div className="absolute top-0 right-0 h-3 w-36 bg-[#f97316] rounded-bl-md shadow-[0_2px_14px_rgba(249,115,22,0.5)]" />
+    <section id="skills" aria-label="Technical Skills" className="hero-ink relative overflow-hidden border-y border-[#4d4c68] px-5 py-20 md:px-8 md:py-28">
+      {/* Decorative concentric orbits matching original theme */}
+      <div className="pointer-events-none absolute -right-24 top-6 h-72 w-72 rounded-full border border-[#777592]/20" />
+      <div className="pointer-events-none absolute -right-12 top-14 h-52 w-52 rounded-full border border-dashed border-[#777592]/20" />
 
-      <div className="mx-auto max-w-[1240px] mb-12">
-        <h2 className="reveal font-display text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1.05] tracking-tight text-white">
+      <div className="relative mx-auto max-w-[1240px] mb-12">
+        <span className="reveal font-mono text-[10px] uppercase tracking-[.2em] text-[#bcb9ca]">02 / Core Capabilities</span>
+        <h2 className="reveal reveal-delay-1 mt-4 font-display text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[.92] tracking-[-.08em] text-[#efe8d7]">
           My Technical <br />
-          <span className="text-[#f97316]">Background Skills</span>
+          <span className="text-[#f6c85f]">Background Skills.</span>
         </h2>
       </div>
 
       {/* Infinite Scrolling Track */}
       <div className="relative w-full overflow-hidden py-4">
-        {/* Soft edge gradients */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 md:w-40 bg-gradient-to-r from-[#0c0c16] to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 md:w-40 bg-gradient-to-l from-[#0c0c16] to-transparent" />
+        {/* Soft edge gradients matching hero-ink #252545 */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 md:w-36 bg-gradient-to-r from-[#252545] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 md:w-36 bg-gradient-to-l from-[#252545] to-transparent" />
 
         <div className="skills-track flex w-max items-center gap-6 sm:gap-8 select-none">
           {[...technicalSkills, ...technicalSkills, ...technicalSkills].map((skill, index) => {
@@ -468,14 +470,14 @@ function SkillsSection() {
             return (
               <div
                 key={`${skill.name}-${index}`}
-                className="group flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#161626] border border-[#26253c] hover:border-[#f97316] hover:bg-[#1f1e33] hover:scale-105 transition-all duration-300 shadow-[0_8px_24px_rgba(0,0,0,0.45)] cursor-pointer p-3 relative"
+                className="group flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#1c1c38] border border-[#555472] hover:border-[#f6c85f] hover:bg-[#222244] hover:-translate-y-1 transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,0.18)] cursor-pointer p-3 relative"
                 title={skill.name}
               >
-                <div className="flex items-center justify-center w-12 h-12 transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="w-10 h-10 object-contain drop-shadow" />
+                <div className="flex items-center justify-center w-11 h-11 transition-transform duration-200 group-hover:scale-110">
+                  <Icon className="w-9 h-9 object-contain drop-shadow" />
                 </div>
                 {skill.sublabel && (
-                  <span className="mt-1 text-[8.5px] font-medium text-[#9290a6] group-hover:text-white transition-colors text-center leading-none">
+                  <span className="mt-1 font-mono text-[8.5px] uppercase tracking-wider text-[#bcb9ca] group-hover:text-[#f6c85f] transition-colors text-center leading-none">
                     {skill.sublabel}
                   </span>
                 )}
@@ -661,48 +663,43 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#0c0c16] px-5 pt-20 pb-12 md:px-8 md:pt-32 md:pb-20 text-white">
-      {/* Top left decorative angled dashes matching Image 1 */}
-      <div className="pointer-events-none absolute left-6 top-8 hidden opacity-40 sm:block">
-        <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
-          <line x1="2" y1="2" x2="43" y2="43" stroke="#f97316" strokeWidth="2.5" strokeDasharray="6 6" />
-        </svg>
-      </div>
-
-      {/* Ambient background glow */}
-      <div className="pointer-events-none absolute -top-40 right-10 h-[450px] w-[450px] rounded-full bg-[#f97316]/5 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-10 left-10 h-[350px] w-[350px] rounded-full bg-[#f97316]/4 blur-[100px]" />
+    <section id="contact" className="hero-ink relative overflow-hidden px-5 py-24 md:px-8 md:py-36">
+      {/* Original decorative concentric orbits */}
+      <div className="pointer-events-none absolute -right-28 top-16 h-80 w-80 rounded-full border border-[#777592]/25" />
+      <div className="pointer-events-none absolute -right-16 top-28 h-56 w-56 rounded-full border border-dashed border-[#777592]/25" />
 
       <div className="relative mx-auto max-w-[1240px]">
-        {/* Header */}
-        <div className="mb-14">
-          <h2 className="reveal font-display text-[clamp(2.8rem,6.5vw,5.5rem)] font-bold tracking-tight text-white leading-none">
-            Get In <span className="text-[#f97316]">Touch</span>
-          </h2>
-          <div className="reveal reveal-delay-1 mt-6 grid gap-6 md:grid-cols-2 max-w-3xl text-sm sm:text-base leading-relaxed text-[#a5a3b7]">
-            <p>
-              Have a project in mind or just want to connect? I would love to hear from you let us build something amazing together.
-            </p>
-            <p>
-              I am always open to opportunities, collaborations, and meaningful conversations.
-            </p>
-          </div>
+        {/* Section Number & Heading in Original Theme */}
+        <span className="reveal font-mono text-[10px] uppercase tracking-[.2em] text-[#bcb9ca]">05 / The open tab</span>
+        <h2 className="reveal reveal-delay-1 mt-7 max-w-[900px] font-display text-[clamp(3.6rem,8.5vw,8.5rem)] font-medium leading-[.84] tracking-[-.11em] text-[#efe8d7]">
+          Get In <br />
+          <span className="text-[#f6c85f]">Touch.</span>
+        </h2>
+
+        {/* Intro text */}
+        <div className="reveal reveal-delay-1 mt-10 grid gap-6 md:grid-cols-2 max-w-3xl border-t border-[#555472] pt-7 text-base leading-7 text-[#c8c6d2]">
+          <p>
+            Have a project in mind, a tangled problem, or just want to connect? I would love to hear from you — let us build something amazing together.
+          </p>
+          <p>
+            I am always open to opportunities, collaborations, and conversations about systems, software, and products that people use.
+          </p>
         </div>
 
-        {/* Main Grid: Left Details & Right Form */}
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16 items-start">
-          {/* Left: Contact Info & Socials */}
-          <div className="reveal reveal-delay-1 flex flex-col gap-6">
+        {/* Two-Column Grid: Contact Details & Floating Message Card */}
+        <div className="mt-14 grid gap-12 lg:grid-cols-[1.05fr_1.1fr] lg:gap-16 items-start">
+          {/* Left: Contact Info Pills & Socials */}
+          <div className="reveal reveal-delay-2 flex flex-col gap-5">
             {/* Email Pill */}
             <a
               data-testid="link-email-contact"
               href={`mailto:${emailAddress}`}
-              className="group flex items-center gap-4 p-4 rounded-2xl bg-[#141424] border border-[#25253b] hover:border-[#f97316]/60 hover:bg-[#18182b] transition-all duration-300"
+              className="group flex items-center gap-4 p-4 border border-[#555472] bg-[#1c1c38] hover:border-[#f6c85f] hover:bg-[#202042] transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,.15)]"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1c1c30] text-[#a5a3b7] group-hover:text-[#f97316] group-hover:scale-105 transition-all">
-                <Mail size={22} />
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#555472] bg-[#252545] text-[#f6c85f] group-hover:scale-105 transition-all">
+                <Mail size={18} />
               </div>
-              <span className="font-medium text-white/90 text-sm sm:text-base tracking-wide group-hover:text-white">
+              <span className="font-mono text-sm tracking-wide text-[#efe8d7] group-hover:text-[#f6c85f] transition-colors">
                 {emailAddress}
               </span>
             </a>
@@ -711,37 +708,37 @@ function ContactSection() {
             <a
               data-testid="link-phone-contact"
               href="tel:+91985180994"
-              className="group flex items-center gap-4 p-4 rounded-2xl bg-[#141424] border border-[#25253b] hover:border-[#f97316]/60 hover:bg-[#18182b] transition-all duration-300"
+              className="group flex items-center gap-4 p-4 border border-[#555472] bg-[#1c1c38] hover:border-[#f6c85f] hover:bg-[#202042] transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,.15)]"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1c1c30] text-[#a5a3b7] group-hover:text-[#f97316] group-hover:scale-105 transition-all">
-                <Phone size={22} />
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#555472] bg-[#252545] text-[#f6c85f] group-hover:scale-105 transition-all">
+                <Phone size={18} />
               </div>
-              <span className="font-medium text-white/90 text-sm sm:text-base tracking-wide group-hover:text-white">
+              <span className="font-mono text-sm tracking-wide text-[#efe8d7] group-hover:text-[#f6c85f] transition-colors">
                 +91 985180994
               </span>
             </a>
 
             {/* Location Pill */}
-            <div className="flex items-center gap-4 p-4 rounded-2xl bg-[#141424] border border-[#25253b]">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1c1c30] text-[#a5a3b7]">
-                <MapPin size={22} />
+            <div className="flex items-center gap-4 p-4 border border-[#555472] bg-[#1c1c38] shadow-[5px_5px_0_rgba(0,0,0,.15)]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#555472] bg-[#252545] text-[#d96f5b]">
+                <MapPin size={18} />
               </div>
-              <span className="font-medium text-white/90 text-sm sm:text-base tracking-wide">
+              <span className="font-mono text-sm tracking-wide text-[#efe8d7]">
                 Kanpur, Uttar Pradesh
               </span>
             </div>
 
-            {/* Social Pills */}
-            <div className="mt-4 flex flex-wrap items-center gap-4">
+            {/* Social Buttons Row */}
+            <div className="mt-3 flex flex-wrap items-center gap-3">
               <a
                 data-testid="link-linkedin-contact"
                 href={linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#141424] border border-[#25253b] text-white/80 hover:text-white hover:border-[#f97316] hover:bg-[#1f1e33] hover:scale-105 transition-all duration-200"
+                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#1c1c38] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#252545] transition-all"
               >
-                <Linkedin size={20} />
+                <Linkedin size={17} />
               </a>
               <a
                 data-testid="link-github-contact"
@@ -749,9 +746,9 @@ function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#141424] border border-[#25253b] text-white/80 hover:text-white hover:border-[#f97316] hover:bg-[#1f1e33] hover:scale-105 transition-all duration-200"
+                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#1c1c38] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#252545] transition-all"
               >
-                <Github size={20} />
+                <Github size={17} />
               </a>
               <a
                 data-testid="link-code-contact"
@@ -759,9 +756,9 @@ function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Coding Profile"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#141424] border border-[#25253b] text-white/80 hover:text-white hover:border-[#f97316] hover:bg-[#1f1e33] hover:scale-105 transition-all duration-200"
+                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#1c1c38] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#252545] transition-all"
               >
-                <Code size={20} />
+                <Code size={17} />
               </a>
               <a
                 data-testid="link-instagram-contact"
@@ -769,37 +766,37 @@ function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#141424] border border-[#25253b] text-white/80 hover:text-white hover:border-[#f97316] hover:bg-[#1f1e33] hover:scale-105 transition-all duration-200"
+                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#1c1c38] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#252545] transition-all"
               >
-                <Instagram size={20} />
+                <Instagram size={17} />
               </a>
             </div>
           </div>
 
-          {/* Right: Floating Message Card */}
-          <div className="reveal reveal-delay-2 relative rounded-3xl bg-[#131322] border border-[#26263e] p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            {/* Orange glowing top bar accent matching image 1 */}
-            <div className="absolute top-0 left-8 right-8 h-[3px] bg-gradient-to-r from-transparent via-[#f97316] to-transparent rounded-full shadow-[0_0_14px_#f97316]" />
-
-            <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-6">
-              Message
-            </h3>
+          {/* Right: Floating Message Card in Original Tactile Aesthetic */}
+          <div className="reveal reveal-delay-2 relative border border-[#555472] bg-[#1c1c38] p-6 sm:p-8 shadow-[10px_12px_0_rgba(0,0,0,.25)]">
+            <div className="mb-6 flex items-center justify-between border-b border-[#555472] pb-4">
+              <h3 className="font-display text-2xl font-semibold tracking-[-.05em] text-[#efe8d7]">
+                Message
+              </h3>
+              <div className="h-2 w-16 bg-[#f6c85f]" />
+            </div>
 
             {submitted ? (
-              <div className="py-12 text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#f97316]/20 text-[#f97316] mb-4">
-                  <Check size={28} />
+              <div className="py-10 text-center">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center border border-[#f6c85f] bg-[#f6c85f]/15 text-[#f6c85f] mb-4">
+                  <Check size={24} />
                 </div>
-                <h4 className="text-xl font-bold text-white">Message Dispatched!</h4>
-                <p className="mt-2 text-sm text-[#a5a3b7]">
+                <h4 className="font-display text-xl font-semibold text-[#efe8d7]">Message Dispatched</h4>
+                <p className="mt-2 text-sm text-[#c8c6d2]">
                   Thank you for reaching out. I will get back to you shortly.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="relative">
-                  <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#75728a]">
-                    <User size={18} />
+                  <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-[#777592]">
+                    <User size={16} />
                   </div>
                   <input
                     type="text"
@@ -807,13 +804,13 @@ function ContactSection() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full rounded-xl bg-[#1b1b2d] border border-[#2c2b42] py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-[#68657f] focus:border-[#f97316] focus:outline-none focus:ring-1 focus:ring-[#f97316] transition-all"
+                    className="w-full border border-[#555472] bg-[#15152a] py-3 pl-10 pr-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all"
                   />
                 </div>
 
                 <div className="relative">
-                  <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#75728a]">
-                    <Mail size={18} />
+                  <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-[#777592]">
+                    <Mail size={16} />
                   </div>
                   <input
                     type="email"
@@ -821,7 +818,7 @@ function ContactSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email address"
-                    className="w-full rounded-xl bg-[#1b1b2d] border border-[#2c2b42] py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-[#68657f] focus:border-[#f97316] focus:outline-none focus:ring-1 focus:ring-[#f97316] transition-all"
+                    className="w-full border border-[#555472] bg-[#15152a] py-3 pl-10 pr-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all"
                   />
                 </div>
 
@@ -832,15 +829,15 @@ function ContactSection() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type Message"
-                    className="w-full rounded-xl bg-[#1b1b2d] border border-[#2c2b42] p-4 text-sm text-white placeholder:text-[#68657f] focus:border-[#f97316] focus:outline-none focus:ring-1 focus:ring-[#f97316] transition-all resize-none"
+                    className="w-full border border-[#555472] bg-[#15152a] p-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full mt-2 py-3.5 rounded-xl bg-[#f97316] hover:bg-[#ea580c] active:scale-[0.99] text-white font-semibold text-base shadow-[0_4px_20px_rgba(249,115,22,0.35)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full mt-2 py-3 bg-[#f6c85f] hover:bg-[#ffe082] text-[#252545] font-bold font-mono text-xs uppercase tracking-[.14em] shadow-[4px_4px_0_rgba(0,0,0,.25)] active:translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  Send
+                  <Send size={14} /> Send Message
                 </button>
               </form>
             )}
@@ -848,64 +845,65 @@ function ContactSection() {
         </div>
 
         {/* Floating Dock Toolbar */}
-        <div className="mt-16 flex justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 rounded-2xl bg-[#141424]/90 backdrop-blur-md border border-[#28273e] p-2 sm:p-2.5 shadow-2xl">
+        <div className="reveal reveal-delay-3 mt-16 flex justify-center">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 border border-[#555472] bg-[#1c1c38]/95 backdrop-blur-md p-2 sm:p-2.5 shadow-[6px_6px_0_rgba(0,0,0,.25)]">
             {/* Resume CV */}
             <a
               data-testid="link-resume"
               href="/JJ_RESUME_1787425298534.pdf"
               download
-              className="flex items-center gap-3 px-3.5 py-2 rounded-xl hover:bg-[#1e1e33] transition-colors"
+              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#252545] transition-colors"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#271714] text-[#f97316] border border-[#f97316]/30">
-                <Download size={16} />
+              <div className="flex h-7 w-7 items-center justify-center border border-[#d96f5b] bg-[#d96f5b]/20 text-[#d96f5b]">
+                <Download size={14} />
               </div>
               <div className="flex flex-col text-left leading-tight">
-                <span className="text-xs font-bold text-[#f97316]">Resume</span>
-                <span className="text-[10px] text-[#8e8b9f]">Download CV</span>
+                <span className="font-mono text-xs font-bold text-[#d96f5b]">Resume</span>
+                <span className="font-mono text-[9px] uppercase tracking-wider text-[#777592]">Download CV</span>
               </div>
             </a>
 
-            <div className="h-6 w-px bg-[#26263b]" />
+            <div className="h-6 w-px bg-[#555472]" />
 
             {/* Theme Toggle */}
             <button
               type="button"
               onClick={toggleTheme}
-              className="flex items-center gap-3 px-3.5 py-2 rounded-xl hover:bg-[#1e1e33] transition-colors cursor-pointer"
+              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#252545] transition-colors cursor-pointer"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#222135] text-amber-400">
-                {isLightMode ? <Moon size={16} /> : <Sun size={16} />}
+              <div className="flex h-7 w-7 items-center justify-center border border-[#f6c85f] bg-[#f6c85f]/20 text-[#f6c85f]">
+                {isLightMode ? <Moon size={14} /> : <Sun size={14} />}
               </div>
               <div className="flex flex-col text-left leading-tight">
-                <span className="text-xs font-bold text-white">{isLightMode ? 'Dark Mode' : 'Light Mode'}</span>
-                <span className="text-[10px] text-[#8e8b9f]">Switch theme</span>
+                <span className="font-mono text-xs font-bold text-[#efe8d7]">{isLightMode ? 'Dark Mode' : 'Light Mode'}</span>
+                <span className="font-mono text-[9px] uppercase tracking-wider text-[#777592]">Switch theme</span>
               </div>
             </button>
 
-            <div className="h-6 w-px bg-[#26263b]" />
+            <div className="h-6 w-px bg-[#555472]" />
 
             {/* Spotify */}
             <a
               href="https://open.spotify.com"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 px-3.5 py-2 rounded-xl hover:bg-[#1e1e33] transition-colors"
+              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#252545] transition-colors"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#112419]">
-                <SpotifyIcon className="w-5 h-5" />
+              <div className="flex h-7 w-7 items-center justify-center border border-[#1DB954] bg-[#1DB954]/20">
+                <SpotifyIcon className="w-4 h-4" />
               </div>
               <div className="flex flex-col text-left leading-tight">
-                <span className="text-xs font-bold text-[#1DB954]">Spotify</span>
-                <span className="text-[10px] text-[#8e8b9f]">Blend with me</span>
+                <span className="font-mono text-xs font-bold text-[#1DB954]">Spotify</span>
+                <span className="font-mono text-[9px] uppercase tracking-wider text-[#777592]">Blend with me</span>
               </div>
             </a>
           </div>
         </div>
 
-        {/* Copyright Footer */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#1e1e30] pt-6 text-xs text-[#726f85]">
-          <p>© 2026 <span className="text-[#a5a3b7] font-medium">Janmaijay Jaiswal</span>. All rights reserved.</p>
+        {/* Original Footer line */}
+        <div className="mt-20 flex flex-col justify-between gap-4 border-t border-[#555472] pt-5 font-mono text-[10px] uppercase tracking-[.17em] text-[#777592] md:flex-row">
+          <span>Janmaijay Jaiswal / 2026</span>
+          <span>Made with patience + sharp edges</span>
           <Anchor href="#top">Back to top ↑</Anchor>
         </div>
       </div>
