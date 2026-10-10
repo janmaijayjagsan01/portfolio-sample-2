@@ -39,6 +39,8 @@ const projects = [
     tone: 'saffron',
     mark: 'SM',
     note: 'from shelf → signal',
+    liveUrl: 'https://smart-eccomerce.vercel.app',
+    githubUrl: 'https://github.com/janmaijayjagsan01/smart_eccomerce',
   },
   {
     number: '02',
@@ -49,6 +51,8 @@ const projects = [
     tone: 'teal',
     mark: 'NS',
     note: 'from roster → rhythm',
+    liveUrl: 'https://nextscrimz.xyz',
+    githubUrl: 'https://github.com/janmaijayjagsan01/Nextscrimz',
   },
   {
     number: '03',
@@ -59,6 +63,18 @@ const projects = [
     tone: 'coral',
     mark: 'RA',
     note: 'from instinct → table',
+    githubUrl: 'https://github.com/janmaijayjagsan01/rasoee',
+  },
+  {
+    number: '04',
+    name: 'AI Traffic Detection',
+    type: 'Vision & signal flow',
+    description: 'An intelligent traffic density monitoring and signal control system using YOLOv8 and PyTorch to dynamically optimize congestion.',
+    tags: ['Computer Vision', 'YOLOv8', 'PyTorch', 'Automation'],
+    tone: 'indigo',
+    mark: 'AI',
+    note: 'from density → flow',
+    githubUrl: 'https://github.com/janmaijayjagsan01/Ai-traffic-detection-system',
   },
 ];
 
@@ -226,17 +242,33 @@ function TechStrip() {
   );
 }
 
-function ProjectVisual({ tone, mark }: { tone: string; mark: string }) {
-  const palette = tone === 'saffron' ? { bg: '#f6c85f', ink: '#252545', line: '#d96f5b' } : tone === 'teal' ? { bg: '#78b7b3', ink: '#252545', line: '#146b72' } : { bg: '#d96f5b', ink: '#efe8d7', line: '#f6c85f' };
-  return (
-    <div className="relative h-52 overflow-hidden p-5" style={{ backgroundColor: palette.bg, color: palette.ink }}>
+function ProjectVisual({ tone, mark, url }: { tone: string; mark: string; url?: string }) {
+  const palette =
+    tone === 'saffron'
+      ? { bg: '#f6c85f', ink: '#252545', line: '#d96f5b' }
+      : tone === 'teal'
+      ? { bg: '#78b7b3', ink: '#252545', line: '#146b72' }
+      : tone === 'indigo'
+      ? { bg: '#465982', ink: '#efe8d7', line: '#f6c85f' }
+      : { bg: '#d96f5b', ink: '#efe8d7', line: '#f6c85f' };
+
+  const visual = (
+    <div className="relative h-52 overflow-hidden p-5 transition-transform duration-300 group-hover:scale-[1.01]" style={{ backgroundColor: palette.bg, color: palette.ink }}>
       <div className="absolute -right-10 -top-14 h-44 w-44 rounded-full border-[1.5px]" style={{ borderColor: palette.line }} />
       <div className="absolute -right-2 -top-6 h-32 w-32 rounded-full border" style={{ borderColor: palette.line }} />
       <div className="absolute bottom-[-55px] left-10 h-44 w-44 rotate-45 border" style={{ borderColor: palette.line }} />
-      <span className="font-mono text-[10px] uppercase tracking-[.15em] opacity-70">Selected build / 2024—25</span>
+      <span className="font-mono text-[10px] uppercase tracking-[.15em] opacity-70">Selected build / 2024—26</span>
       <div className="absolute bottom-4 left-5 font-display text-7xl font-bold tracking-[-.12em]">{mark}</div>
-      <div className="absolute bottom-5 right-5 flex h-8 w-8 items-center justify-center border" style={{ borderColor: palette.ink }}><ArrowUpRight size={15} /></div>
+      <div className="absolute bottom-5 right-5 flex h-8 w-8 items-center justify-center border transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ borderColor: palette.ink }}><ArrowUpRight size={15} /></div>
     </div>
+  );
+
+  return url ? (
+    <a href={url} target="_blank" rel="noreferrer" className="group block focus:outline-none" title="Open project">
+      {visual}
+    </a>
+  ) : (
+    <div className="group">{visual}</div>
   );
 }
 
@@ -246,21 +278,64 @@ function WorkSection() {
       <div className="mx-auto max-w-[1240px]">
         <div className="mb-16 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div><span className="reveal font-mono text-[10px] uppercase tracking-[.2em] text-[#68637a]">02 / Workbench</span><h2 className="reveal reveal-delay-1 mt-5 font-display text-[clamp(3rem,7vw,7rem)] font-medium leading-[.83] tracking-[-.1em] text-[#252545]">Things I have<br /><span className="text-[#d96f5b]">made useful.</span></h2></div>
-          <p className="reveal max-w-[260px] text-sm leading-6 text-[#68637a] md:pb-2">Three projects, three different kinds of friction. Each one taught me where the real product starts.</p>
+          <p className="reveal max-w-[280px] text-sm leading-6 text-[#68637a] md:pb-2">Four projects, each tackling a different kind of friction. Each one taught me where the real product starts.</p>
         </div>
-        <div className="grid gap-7 md:grid-cols-3">
-          {projects.map((project, index) => (
-            <article data-testid={`card-project-${project.name.toLowerCase().replace(' ', '-')}`} key={project.name} className={`project-card reveal reveal-delay-${index + 1} overflow-hidden border border-[#cfc4b0] bg-[#f5efdf] ${index === 1 ? 'md:mt-14' : index === 2 ? 'md:mt-5' : ''}`}>
-              <ProjectVisual tone={project.tone} mark={project.mark} />
-              <div className="p-6 md:p-7">
-                <div className="flex items-start justify-between gap-4"><div><div className="font-mono text-[10px] text-[#68637a]">{project.number}</div><h3 className="mt-2 font-display text-3xl font-semibold tracking-[-.07em] text-[#252545]">{project.name}</h3></div><span className="mt-1 text-[#d96f5b]"><Sparkles size={17} strokeWidth={1.5} /></span></div>
-                <p className="mt-5 text-[13px] font-semibold uppercase tracking-[.08em] text-[#146b72]">{project.type}</p>
-                <p className="mt-3 min-h-[72px] text-sm leading-6 text-[#68637a]">{project.description}</p>
-                <div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="border border-[#d6cdbb] px-2 py-1 font-mono text-[9px] uppercase tracking-[.08em] text-[#68637a]">{tag}</span>)}</div>
-                <div className="mt-7 flex items-center justify-between border-t border-[#d6cdbb] pt-4 font-mono text-[10px] uppercase tracking-[.12em] text-[#68637a]"><span>{project.note}</span><span className="text-[#d96f5b]">↗</span></div>
-              </div>
-            </article>
-          ))}
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+          {projects.map((project, index) => {
+            const primaryUrl = project.liveUrl || project.githubUrl;
+            return (
+              <article data-testid={`card-project-${project.name.toLowerCase().replace(/\s+/g, '-')}`} key={project.name} className={`project-card reveal reveal-delay-${(index % 4) + 1} flex flex-col justify-between overflow-hidden border border-[#cfc4b0] bg-[#f5efdf]`}>
+                <div>
+                  <ProjectVisual tone={project.tone} mark={project.mark} url={primaryUrl} />
+                  <div className="p-6 md:p-7">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <div className="font-mono text-[10px] text-[#68637a]">{project.number}</div>
+                        <h3 className="mt-2 font-display text-2xl font-semibold tracking-[-.07em] text-[#252545]">{project.name}</h3>
+                      </div>
+                      <span className="mt-1 text-[#d96f5b]"><Sparkles size={17} strokeWidth={1.5} /></span>
+                    </div>
+                    <p className="mt-4 text-[12px] font-semibold uppercase tracking-[.08em] text-[#146b72]">{project.type}</p>
+                    <p className="mt-3 min-h-[72px] text-sm leading-6 text-[#68637a]">{project.description}</p>
+                    <div className="mt-6 flex flex-wrap gap-1.5">
+                      {project.tags.map((tag) => <span key={tag} className="border border-[#d6cdbb] px-2 py-0.5 font-mono text-[9px] uppercase tracking-[.08em] text-[#68637a]">{tag}</span>)}
+                    </div>
+                  </div>
+                </div>
+                <div className="px-6 pb-6 md:px-7 md:pb-7">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#d6cdbb] pt-4 font-mono text-[10px] uppercase tracking-[.12em] text-[#68637a]">
+                    <span className="truncate max-w-[105px]">{project.note}</span>
+                    <div className="flex items-center gap-3">
+                      {project.liveUrl && (
+                        <a
+                          data-testid={`link-live-${project.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center gap-1 font-bold text-[#146b72] hover:text-[#252545] hover:underline"
+                        >
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#146b72]" />
+                          Live <ArrowUpRight size={13} />
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          data-testid={`link-repo-${project.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex items-center gap-1 font-medium text-[#68637a] hover:text-[#252545] hover:underline"
+                        >
+                          <Github size={12} />
+                          {project.liveUrl ? 'Code' : 'GitHub'} <ArrowUpRight size={13} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
