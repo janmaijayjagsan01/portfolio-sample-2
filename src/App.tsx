@@ -445,24 +445,20 @@ const technicalSkills = [
 
 function SkillsSection() {
   return (
-    <section id="skills" aria-label="Technical Skills" className="hero-ink relative overflow-hidden border-y border-[#4d4c68] px-5 py-20 md:px-8 md:py-28">
-      {/* Decorative concentric orbits matching original theme */}
-      <div className="pointer-events-none absolute -right-24 top-6 h-72 w-72 rounded-full border border-[#777592]/20" />
-      <div className="pointer-events-none absolute -right-12 top-14 h-52 w-52 rounded-full border border-dashed border-[#777592]/20" />
-
+    <section id="skills" aria-label="Technical Skills" className="paper-grid relative overflow-hidden bg-[#efe8d7] border-y border-[#bdb2a1] px-5 py-20 md:px-8 md:py-28">
       <div className="relative mx-auto max-w-[1240px] mb-12">
-        <span className="reveal font-mono text-[10px] uppercase tracking-[.2em] text-[#bcb9ca]">02 / Core Capabilities</span>
-        <h2 className="reveal reveal-delay-1 mt-4 font-display text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[.92] tracking-[-.08em] text-[#efe8d7]">
+        <span className="reveal font-mono text-[10px] uppercase tracking-[.2em] text-[#68637a]">02 / Core Capabilities</span>
+        <h2 className="reveal reveal-delay-1 mt-4 font-display text-[clamp(2.5rem,6vw,5.5rem)] font-medium leading-[.92] tracking-[-.08em] text-[#252545]">
           My Technical <br />
-          <span className="text-[#f6c85f]">Background Skills.</span>
+          <span className="text-[#d96f5b]">Background Skills.</span>
         </h2>
       </div>
 
       {/* Infinite Scrolling Track */}
       <div className="relative w-full overflow-hidden py-4">
-        {/* Soft edge gradients matching hero-ink #252545 */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 md:w-36 bg-gradient-to-r from-[#252545] to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 md:w-36 bg-gradient-to-l from-[#252545] to-transparent" />
+        {/* Soft edge gradients matching cream paper #efe8d7 */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 md:w-36 bg-gradient-to-r from-[#efe8d7] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 md:w-36 bg-gradient-to-l from-[#efe8d7] to-transparent" />
 
         <div className="skills-track flex w-max items-center gap-6 sm:gap-8 select-none">
           {[...technicalSkills, ...technicalSkills, ...technicalSkills].map((skill, index) => {
@@ -470,14 +466,14 @@ function SkillsSection() {
             return (
               <div
                 key={`${skill.name}-${index}`}
-                className="group flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#1c1c38] border border-[#555472] hover:border-[#f6c85f] hover:bg-[#222244] hover:-translate-y-1 transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,0.18)] cursor-pointer p-3 relative"
+                className="group flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#f5efdf] border border-[#bdb2a1] hover:border-[#252545] hover:bg-[#efe8d7] hover:-translate-y-1 transition-all duration-200 shadow-[4px_4px_0_rgba(37,37,69,0.08)] cursor-pointer p-3 relative"
                 title={skill.name}
               >
                 <div className="flex items-center justify-center w-11 h-11 transition-transform duration-200 group-hover:scale-110">
-                  <Icon className="w-9 h-9 object-contain drop-shadow" />
+                  <Icon className="w-9 h-9 object-contain drop-shadow-sm" />
                 </div>
                 {skill.sublabel && (
-                  <span className="mt-1 font-mono text-[8.5px] uppercase tracking-wider text-[#bcb9ca] group-hover:text-[#f6c85f] transition-colors text-center leading-none">
+                  <span className="mt-1 font-mono text-[8.5px] uppercase tracking-wider text-[#68637a] group-hover:text-[#252545] transition-colors text-center leading-none">
                     {skill.sublabel}
                   </span>
                 )}
@@ -694,7 +690,7 @@ function ContactSection() {
             <a
               data-testid="link-email-contact"
               href={`mailto:${emailAddress}`}
-              className="group flex items-center gap-4 p-4 border border-[#555472] bg-[#1c1c38] hover:border-[#f6c85f] hover:bg-[#202042] transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,.15)]"
+              className="group flex items-center gap-4 p-4 border border-[#555472] bg-[#252545] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,.15)]"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#555472] bg-[#252545] text-[#f6c85f] group-hover:scale-105 transition-all">
                 <Mail size={18} />
@@ -708,7 +704,7 @@ function ContactSection() {
             <a
               data-testid="link-phone-contact"
               href="tel:+91985180994"
-              className="group flex items-center gap-4 p-4 border border-[#555472] bg-[#1c1c38] hover:border-[#f6c85f] hover:bg-[#202042] transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,.15)]"
+              className="group flex items-center gap-4 p-4 border border-[#555472] bg-[#252545] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,.15)]"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#555472] bg-[#252545] text-[#f6c85f] group-hover:scale-105 transition-all">
                 <Phone size={18} />
@@ -719,7 +715,7 @@ function ContactSection() {
             </a>
 
             {/* Location Pill */}
-            <div className="flex items-center gap-4 p-4 border border-[#555472] bg-[#1c1c38] shadow-[5px_5px_0_rgba(0,0,0,.15)]">
+            <div className="flex items-center gap-4 p-4 border border-[#555472] bg-[#252545] shadow-[5px_5px_0_rgba(0,0,0,.15)]">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#555472] bg-[#252545] text-[#d96f5b]">
                 <MapPin size={18} />
               </div>
@@ -736,7 +732,7 @@ function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#1c1c38] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#252545] transition-all"
+                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#252545] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all"
               >
                 <Linkedin size={17} />
               </a>
@@ -746,7 +742,7 @@ function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#1c1c38] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#252545] transition-all"
+                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#252545] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all"
               >
                 <Github size={17} />
               </a>
@@ -756,7 +752,7 @@ function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Coding Profile"
-                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#1c1c38] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#252545] transition-all"
+                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#252545] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all"
               >
                 <Code size={17} />
               </a>
@@ -766,7 +762,7 @@ function ContactSection() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#1c1c38] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#252545] transition-all"
+                className="flex h-11 w-11 items-center justify-center border border-[#555472] bg-[#252545] text-[#bcb9ca] hover:text-[#f6c85f] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all"
               >
                 <Instagram size={17} />
               </a>
@@ -774,7 +770,7 @@ function ContactSection() {
           </div>
 
           {/* Right: Floating Message Card in Original Tactile Aesthetic */}
-          <div className="reveal reveal-delay-2 relative border border-[#555472] bg-[#1c1c38] p-6 sm:p-8 shadow-[10px_12px_0_rgba(0,0,0,.25)]">
+          <div className="reveal reveal-delay-2 relative border border-[#555472] bg-[#252545] p-6 sm:p-8 shadow-[10px_12px_0_rgba(0,0,0,.25)]">
             <div className="mb-6 flex items-center justify-between border-b border-[#555472] pb-4">
               <h3 className="font-display text-2xl font-semibold tracking-[-.05em] text-[#efe8d7]">
                 Message
@@ -804,7 +800,7 @@ function ContactSection() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full border border-[#555472] bg-[#15152a] py-3 pl-10 pr-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all"
+                    className="w-full border border-[#555472] bg-[#252545] py-3 pl-10 pr-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all"
                   />
                 </div>
 
@@ -818,7 +814,7 @@ function ContactSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email address"
-                    className="w-full border border-[#555472] bg-[#15152a] py-3 pl-10 pr-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all"
+                    className="w-full border border-[#555472] bg-[#252545] py-3 pl-10 pr-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all"
                   />
                 </div>
 
@@ -829,7 +825,7 @@ function ContactSection() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Type Message"
-                    className="w-full border border-[#555472] bg-[#15152a] p-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all resize-none"
+                    className="w-full border border-[#555472] bg-[#252545] p-3 font-mono text-xs text-[#efe8d7] placeholder-[#777592] focus:border-[#f6c85f] focus:outline-none transition-all resize-none"
                   />
                 </div>
 
@@ -846,13 +842,13 @@ function ContactSection() {
 
         {/* Floating Dock Toolbar */}
         <div className="reveal reveal-delay-3 mt-16 flex justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 border border-[#555472] bg-[#1c1c38]/95 backdrop-blur-md p-2 sm:p-2.5 shadow-[6px_6px_0_rgba(0,0,0,.25)]">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 border border-[#555472] bg-[#252545]/95 backdrop-blur-md p-2 sm:p-2.5 shadow-[6px_6px_0_rgba(0,0,0,.25)]">
             {/* Resume CV */}
             <a
               data-testid="link-resume"
               href="/JJ_RESUME_1787425298534.pdf"
               download
-              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#252545] transition-colors"
+              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#2d2d52] transition-colors"
             >
               <div className="flex h-7 w-7 items-center justify-center border border-[#d96f5b] bg-[#d96f5b]/20 text-[#d96f5b]">
                 <Download size={14} />
@@ -869,7 +865,7 @@ function ContactSection() {
             <button
               type="button"
               onClick={toggleTheme}
-              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#252545] transition-colors cursor-pointer"
+              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#2d2d52] transition-colors cursor-pointer"
             >
               <div className="flex h-7 w-7 items-center justify-center border border-[#f6c85f] bg-[#f6c85f]/20 text-[#f6c85f]">
                 {isLightMode ? <Moon size={14} /> : <Sun size={14} />}
@@ -887,7 +883,7 @@ function ContactSection() {
               href="https://open.spotify.com"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#252545] transition-colors"
+              className="flex items-center gap-3 px-3.5 py-2 hover:bg-[#2d2d52] transition-colors"
             >
               <div className="flex h-7 w-7 items-center justify-center border border-[#1DB954] bg-[#1DB954]/20">
                 <SpotifyIcon className="w-4 h-4" />
