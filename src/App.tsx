@@ -114,6 +114,7 @@ const tech = [
 const githubUrl = 'https://github.com/janmaijayjagsan01';
 const linkedinUrl = 'https://www.linkedin.com/in/janmaijay-jaiswal-635040283';
 const emailAddress = 'janmaijayjagsan01@gmail.com';
+const phoneNumber = '+91 7800004408';
 
 function useReveal() {
   const [ready, setReady] = useState(false);
@@ -688,14 +689,14 @@ function ContactSection() {
             {/* Phone Pill */}
             <a
               data-testid="link-phone-contact"
-              href="tel:+91985180994"
+              href={`tel:${phoneNumber.replace(/\s+/g, '')}`}
               className="group flex items-center gap-4 p-4 border border-[#555472] bg-[#252545] hover:border-[#f6c85f] hover:bg-[#2d2d52] transition-all duration-200 shadow-[5px_5px_0_rgba(0,0,0,.15)]"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#555472] bg-[#252545] text-[#f6c85f] group-hover:scale-105 transition-all">
                 <Phone size={18} />
               </div>
               <span className="font-mono text-sm tracking-wide text-[#efe8d7] group-hover:text-[#f6c85f] transition-colors">
-                +91 985180994
+                {phoneNumber}
               </span>
             </a>
 
